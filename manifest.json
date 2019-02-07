@@ -183,6 +183,14 @@
 						"default": 200,
 						"min": 50,
 						"max": 2000
+					},
+					{
+						"id": "minimap_timeout",
+						"type": "integer",
+						"label": "Timeout for minimap check fail",
+						"default": 3,
+						"min": 1,
+						"max": 100
 					}
 				]
 			}
