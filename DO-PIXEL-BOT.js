@@ -1330,7 +1330,7 @@ function main() {
 	var pet = new PET();
 	var navi = new Navigator(minimap);
 	var collector = new Collector(client, navi);
-
+	var minimap_timeout = new Config.getValue("minimap_timeout");
 	// +------------------------------+
 	// | Find and measure the minimap |
 	// +------------------------------+	
@@ -1343,8 +1343,8 @@ function main() {
 			break;
 		}
 
-		Helper.log("Minimap not found", tries, "out of 4 tries. Trying again after ") + Config.getValue("minimap_timeout") + " seconds");
-		Helper.sleep(Config.getValue("minimap_timeout")); // Try in 3 seconds again
+		Helper.log("Minimap not found", tries, "out of 4 tries. Trying again after", minimap_timeout, "seconds");
+		Helper.sleep(minimap_timeout); // Try in amount of seconds in config (minimap_timeout) again.
 	}
 
 	if (minimap.getLevel() === undefined) {
