@@ -1343,8 +1343,8 @@ function main() {
 			break;
 		}
 
-		Helper.log("Minimap not found", tries, "out of 4 tries. Trying again after 3 seconds");
-		Helper.sleep(3); // Try in 3 seconds again
+		Helper.log("Minimap not found", tries, "out of 4 tries. Trying again after ") + Config.getValue("minimap_timeout") + " seconds");
+		Helper.sleep(Config.getValue("minimap_timeout")); // Try in 3 seconds again
 	}
 
 	if (minimap.getLevel() === undefined) {
