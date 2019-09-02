@@ -1613,7 +1613,7 @@ Scheduler.prototype.itsTimeToCollectLoot = function() {
 	return good_idea && necessary;
 }
 
-Scheduler.prototype.itsTimerToHuntNPCs = function() {
+Scheduler.prototype.itsTimeToHuntNPCs = function() {
 	var good_idea = Config.getValue("hunt_npcs") === true;
 	var necessary = good_idea;
 	return good_idea && necessary;
@@ -1740,7 +1740,7 @@ Scheduler.prototype.runMainAlgorithm = function() {
 			this.checkForLoot();
 		}
 
-		if (this.itsTimerToHuntNPCs()) {
+		if (this.itsTimeToHuntNPCs()) {
 			//Helper.debug("Time to hunt NPCs...");
 			this.checkForNPCs();
 		}
